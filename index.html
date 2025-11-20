@@ -1,148 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KCRG</title>
-  <link rel="stylesheet" href="test.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
-</head>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+  />
+
 <body>
+  <!-- NAVIGATION -->
   <nav class="navbar">
     <div class="navbarcontainer">
       <div class="logo">KCRG</div>
       <div class="toggle" id="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
-        <span class="bar"></span>
       </div>
       <ul class="menu">
-        <li class="navbaritem"><a href="#home" class="navbarlinks active">Home</a></li>
-        <li class="navbaritem"><a href="#about" class="navbarlinks">About Me</a></li>
-        <li class="navbaritem"><a href="#family" class="navbarlinks">Family Background</a></li>
-        <li class="navbaritem"><a href="#school" class="navbarlinks">Education</a></li>
-        <li class="navbaritem"><a href="#project" class="navbarlinks">Projects</a></li>
+        <li class="navbaritem"><a href="#about" class="navbarlinks active">About Me</a></li>
+        <li class="navbaritem"><a href="#school" class="navbarlinks">Educational Attainment</a></li>
+        <li class="navbaritem"><a href="#achievements" class="navbarlinks">Achievements</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section id="home" class="hero">
+  <!-- ABOUT ME -->
+  <section id="about" class="hero reveal">
     <div class="hero-container">
       <div class="hero-text">
-        <p class="intro">Hi! I'm <span class="name">Ken Cade R. Gapasin</span></p>
-        <h1>I'm a <span class="autotype"></span></h1>
-        <p class="description">
-          A first year student from the University of the Cordilleras. Bachelor of Science in Computer Science.
+        <h1 class="intro">Hi! I'm <span class="name">Ken Cade R. Gapasin</span></h1>
+        <p>I'm a <span class="autotype"></span></h1>
+        <p class="description">A first year student at the University of the Cordilleras.</p>
+        <p class="about-details">
+          I am a first-year Computer Science student with strong passion in Web Development, Web Design,
+          Research, Science, Game Development, and Arduino Projects. I take risks to build meaningful
+          projects and grow through learning, discipline, time management, and creativity.
         </p>
-
-        <div class="buttons">
-          <a href="#project" class="btn primary">View Portfolio</a>
-        </div>
-
         <div class="socials">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.facebook.com/kencade.gapasin.5"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="https://github.com/KennzCade"><i class="fab fa-github"></i></a>
+          <a href="https://www.youtube.com/@kencadeph968"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
-
       <div class="hero-image">
-        <img src="profile.jpg" alt="Ken Cade">
+        <img src="IMG_4637.JPG" alt="Ken Cade">
       </div>
     </div>
   </section>
 
-  <!-- ABOUT ME SECTION -->
-  <section id="about" class="aboutme reveal">
-    <div class="aboutme-container">
-      <div class="about">
-        <h1>About Me</h1>
-        <p>
-          I am Ken Cade R. Gapasin from Batchelor East Natividad Pangasinan, Philippines. 
-          A first year Computer Science student with a strong passion in Web Development, Web Design, 
-          Research, Science, Game Development, and Arduino Projects. I am a hardworking and organized student who takes risks to 
-          create good projects. Learning from mistakes and time management are some of my soft skills. 
-          I love creating new projects to enhance user experience and provide efficient designs for users.
-        </p>
-
-
-        <div class="aboutme-image">
-          <img src="bout.jpg" alt="About Me">
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FAMILY SECTION -->
-  <section id="family" class="family reveal">
-    <div class="family-container">
-      <div class="fam">
-      <h1>Family Background</h1>
-      <p>Write your family background info here...</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SCHOOL SECTION -->
+<!-- EDUCATION -->
 <section id="school" class="school reveal">
   <div class="school-container">
-    <div class="educ">
-      <h1 class="time">
-        <i class="fa-solid fa-graduation-cap"></i>
-        Educational Background
-      </h1>
+    <h1 class="title">
+      <i class="fa-solid fa-graduation-cap"></i>
+      Educational Attainment
+    </h1>
+    <div class="edu-timeline">
 
-      <div class="timeline">
-        <div class="content-box">
-          <img src="movers.jpg">
-          <div class="date">
-            <i class="fa-solid fa-calendar"></i> 2001 - 2002
-          </div>
-          <h2>Elementary</h2>
-          <p>Movers Academy INC</p>
-        </div>
-
-        <div class="content-box">
-          <img class="tnhs" src="tnhs.jpg">
-          <div class="date">
-            <i class="fa-solid fa-calendar"></i> 2019 - 2023
-          </div>
-          <h2>High School</h2>
-          <p>Tayug National High School 
-            Tayug Pangasinan.
-            Special Science Program
-          </p>
-        </div>
-
-        <div class="content-box">
-          <img src="pu.jpg" alt="Hover Image">
-          <div class="date">
-            <i class="fa-solid fa-calendar"></i> 2024 - 2025
-          </div>
-          <h2>Senior High School</h2>
-          <p>Panpacific University
-            Science Technology Engineering and Mathematics
-          </p>
-        </div>
+      <div class="edu-card content-box">
+        <h2>Elementary (Grade 1–2)</h2>
+        <span class="year">2013 – 2015</span>
+        <p>Batchelor East Elementary School</p>
+        <img src="batchelor.png" alt="Batchelor Logo">
       </div>
+
+      <div class="edu-card content-box">
+        <h2>Elementary (Grade 3–6)</h2>
+        <span class="year">2015 – 2019</span>
+        <p>Movers Academy</p>
+        <img src="movers.jpg" alt="Movers Logo">
+      </div>
+
+      <div class="edu-card content-box">
+        <h2>Junior High School (Grade 7–10)</h2>
+        <span class="year">2019 – 2023</span>
+        <p>Tayug National High School <br> With Honor</p>
+        <img src="tnhs.png" alt="TNHS Logo">
+      </div>
+
+      <div class="edu-card content-box">
+        <h2>Senior High School (Grade 11)</h2>
+        <span class="year">2023 – 2024</span>
+        <p>WCC Aeronautical and Technological College <br> With Honor</p>
+        <img src="wcc.png" alt="WCC Logo">
+      </div>
+
+      <div class="edu-card content-box">
+        <h2>Senior High School (Grade 12)</h2>
+        <span class="year">2024 – 2025</span>
+        <p>Panpacific University – Tayug Campus <br> With High Honor</p>
+        <img src="pu.jpg" alt="PU Logo">
+      </div>
+
+      <div class="edu-card content-box">
+        <h2>College (Present)</h2>
+        <span class="year">2025 – Present</span>
+        <p>University of the Cordilleras</p>
+        <img src="uc.jpg" alt="UC Logo">
+      </div>
+
     </div>
   </div>
 </section>
 
 
-  <!-- PROJECT SECTION -->
-  <section id="project" class="project">
-    <div class="section-content">
-      <h1>Projects</h1>
-      <p>Showcase your projects here...</p>
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="achievements reveal">
+  <div class="achievements-container">
+
+    <h1 class="ach">
+      <i class="fa-solid fa-star"></i> Achievements
+    </h1>
+
+    <!-- ===================== -->
+    <!--   CURRICULAR SECTION  -->
+    <!-- ===================== -->
+    <h2 class="ach-divider"><i class="fa-solid fa-book"></i> Curricular Achievements</h2>
+
+    <div class="achievements-grid">
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h3>With High Honors</h3>
+        <p>2024–2025</p>
+      </div>
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h3>With Honors</h3>
+        <p>2024–2025</p>
+      </div>
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-briefcase"></i>
+        <h3>Excellence in Work Immersion</h3>
+        <p>Knowledge Information Network System – 2024–2025</p>
+      </div>
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-hourglass-half"></i>
+        <h3>Completed 80-Hour Work Immersion Program</h3>
+        <p>2024–2025</p>
+      </div>
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-award"></i>
+        <h3>2nd Place – Best in Work Immersion Portfolio Exhibit</h3>
+        <p>2024–2025</p>
+      </div>
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-microphone"></i>
+        <h3>PIRC Best Research Presentation</h3>
+        <p>Panpacific University – 2024–2025</p>
+      </div>
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-mask"></i>
+        <h3>Best Cosplay</h3>
+        <p>2024–2025</p>
+      </div>
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-user-tie"></i>
+        <h3>President Lister</h3>
+        <p>2023–2024</p>
+      </div>
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h3>With Honors</h3>
+        <p>2023–2024</p>
+      </div>
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h3>With Honors</h3>
+        <p>2022–2023</p>
+      </div>
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-medal"></i>
+        <h3>Loyalty Award</h3>
+        <p>Citizenship Advancement Training – 2022–2023</p>
+      </div>
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-camera"></i>
+        <h3>2nd Place – Photo Treebute</h3>
+        <p>2022–2023</p>
+      </div>
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-chalkboard-user"></i>
+        <h3>Best Research Presenter</h3>
+        <p>Life Category – 2022–2023</p>
+      </div>
+
     </div>
-  </section>
+
+    <!-- ========================== -->
+    <!--   EXTRA CURRICULAR SECTION -->
+    <!-- ========================== -->
+    <h2 class="ach-divider"><i class="fa-solid fa-trophy"></i> Extra Curricular Achievements</h2>
+
+    <div class="achievements-grid">
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-flask"></i>
+        <h3>STEM EXPO Champion</h3>
+        <p>UP Diliman National SIP (Math Category) – 2024–2025</p>
+      </div>
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-person-running"></i>
+        <h3>Arnis Silver Medalist</h3>
+        <p>APPS District – 2023–2025</p>
+      </div>
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-dna"></i>
+        <h3>8th Place – SIP Life Individual</h3>
+        <p>Division Science Technology Fair – 2022–2023</p>
+      </div>
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-atom"></i>
+        <h3>3rd Place – SIP Life Team</h3>
+        <p>National Science Quest – 2022–2023</p>
+      </div>
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-microscope"></i>
+        <h3>Regional Science & Technology Fair</h3>
+        <p>2022–2023</p>
+      </div>
+
+      <div class="achievement-card">
+        <i class="fa-solid fa-robot"></i>
+        <h3>4th Place – Robotics & Intelligent Machines</h3>
+        <p>Likha Contest – 2022–2023</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+
 
   <!-- Typed.js -->
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
@@ -151,54 +267,19 @@
       strings: ["Developer", "Designer", "Creator"],
       typeSpeed: 100,
       backSpeed: 60,
-      loop: true
+      loop: true,
     });
   </script>
 
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a2e0cddf3a.js" crossorigin="anonymous"></script>
-
-  <!-- Active Nav on Scroll -->
+  <!-- Click-based navbar highlighting -->
   <script>
-    const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".navbarlinks");
-
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (scrollY >= sectionTop - sectionHeight / 3) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href").includes(current)) {
-          link.classList.add("active");
-        }
+    navLinks.forEach(link => {
+      link.addEventListener("click", (e) => {
+        navLinks.forEach(l => l.classList.remove("active"));
+        e.currentTarget.classList.add("active");
       });
     });
   </script>
-  <script>
-  // Scroll Reveal Animation
-  const reveals = document.querySelectorAll(".reveal");
-
-  window.addEventListener("scroll", () => {
-    for (let i = 0; i < reveals.length; i++) {
-      const windowHeight = window.innerHeight;
-      const revealTop = reveals[i].getBoundingClientRect().top;
-      const revealPoint = 150; // lower = earlier animation trigger
-
-      if (revealTop < windowHeight - revealPoint) {
-        reveals[i].classList.add("active");
-      } else {
-        reveals[i].classList.remove("active");
-      }
-    }
-  });
-</script>
-
 </body>
 </html>

@@ -1,0 +1,420 @@
+/* GENERAL */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2; /* soft light gray */
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  height: 100%;
+  color: #333; /* dark gray text */
+}
+
+@media (max-width: 900px) {
+  html, body {
+    overflow-y: auto !important;   /* Enable vertical scroll on mobile */
+    height: auto !important;
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* NAVIGATION */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.navbarcontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  width: 100%;
+  padding: 0 50px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.9rem;
+  background-color: #1565C0; /* professional blue accent */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 15px;
+}
+
+
+.navbarlinks {
+  color: #333;
+  text-decoration: none;
+  padding: 0 1rem;
+  transition: 0.3s;
+}
+
+.navbarlinks.active {
+  color: #1565C0;
+  border-bottom: 2px solid #1565C0;
+}
+
+.navbarlinks:hover {
+  color: #1A73E8;
+  transform: scale(1.1);
+}
+
+/* HERO / ABOUT SECTION */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+
+.hero-container {
+  display: flex;
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 25px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  flex: 1;
+  color: #333;
+  min-width: 330px;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+.hero-text .intro {
+  font-size: 35px;
+  color: #1565C0;
+}
+
+.hero .name {
+  color: #1A73E8;
+}
+
+.hero-text p {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+.hero-text p span {
+  color: #1565C0;
+}
+
+.hero-text .description {
+  color: #555;
+  font-size: 17px;
+  margin-top: 10px;
+}
+
+.hero-text .about-details {
+  margin-top: 18px;
+  color: #444;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 520px;
+  text-align: justify;
+}
+
+/* SOCIAL ICONS */
+.socials {
+  margin-top: 25px;
+}
+.socials a {
+  color: #1565C0;
+  margin-right: 12px;
+  font-size: 22px;
+  transition: 0.3s;
+}
+.socials a:hover {
+  color: #1A73E8;
+  transform: translateY(-3px);
+}
+
+/* IMAGE */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 330px;
+  height: 330px;
+  border-radius: 10%;
+  border: 4px solid #1565C0;
+  box-shadow: 0 0 25px #1565C0, 0 0 50px #1A73E8;
+  transition: 0.3s;
+}
+
+.hero-image img:hover {
+  box-shadow: 0 0 40px #1565C0, 0 0 80px #1A73E8;
+  scale: 1.1;
+}
+
+/* EDUCATION SECTION */
+.school {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  overflow: hidden;
+  background-color: #f9f9f9; /* very light background */
+}
+
+.school-container {
+  max-width: 1100px;
+  width: 100%;
+  padding: 30px; /* increased padding */
+}
+
+.edu-timeline {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px 30px; /* increased gap for better spacing */
+  margin-top: 25px;
+}
+
+.edu-card {
+  background: #ffffff; /* white card background */
+  padding: 25px; /* slightly larger padding */
+  border-radius: 15px;
+  border: 1px solid rgba(21, 101, 192, 0.2);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  transition: 0.3s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px; /* more space between text and image */
+  min-height: 120px; /* ensures the card doesn't get too small */
+}
+
+.edu-card:hover {
+  border-color: #1565C0; /* professional blue */
+  box-shadow: 0 5px 15px rgba(21, 101, 192, 0.2);
+  scale: 1.1;
+}
+
+.edu-card h2 {
+  font-size: 1.25rem; /* slightly larger for readability */
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.edu-card .year {
+  color: #1565C0;
+  font-size: 1rem; /* larger year for better visibility */
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.edu-card p {
+  margin: 0;
+  font-size: 1rem; /* slightly larger paragraph text */
+  color: #555;
+  line-height: 1.5; /* better readability */
+}
+
+/* CONTENT BOX (for cards with images) */
+.content-box {
+  display: flex;
+  align-items: center;
+}
+
+.content-box img {
+  width: 120px; /* slightly bigger image */
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.content-box:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+  .edu-timeline {
+    grid-template-columns: 1fr;
+  }
+  .edu-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    min-height: auto;
+  }
+  .content-box img {
+    width: 70%; /* adjust for mobile */
+    margin: 15px 0;
+  }
+}
+
+/* PROJECT SECTION */
+.project {
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  background-color: #f2f2f2;
+}
+
+/* ANIMATION */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-container { flex-direction: column; text-align: center; }
+}
+
+/* ===== ACHIEVEMENTS SECTION ===== */
+.achievements {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 15px 15px; /* increased top padding */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #e8f0ff, #ffffff);
+  overflow: hidden;
+}
+
+.achievements-container {
+  width: 100%;
+  max-width: 1300px;
+  text-align: center;
+}
+
+/* Main Title — ensured not cut off */
+.ach {
+  font-size: 1.9rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #1565C0;
+  line-height: 1.2; /* prevents clipping */
+  padding-top: 10px; /* ensures spacing */
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Divider Titles */
+.ach-divider {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-top: 18px;
+  margin-bottom: 10px;
+  text-align: left;
+  padding-left: 10px;
+  border-left: 5px solid #1565C0;
+  color: #0d3c75;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* VERY Compact Grid */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* smaller columns */
+  gap: 6px; /* smaller spacing */
+  margin-bottom: 12px;
+  animation: fadeUp 1s ease forwards;
+}
+
+/* Cards — even smaller */
+.achievement-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(5px);
+  padding: 8px 6px; /* smaller */
+  border-radius: 10px;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.05);
+  transition: 0.25s ease;
+  min-height: 60px; /* smaller */
+  animation: fadeUp 1s ease forwards;
+}
+
+/* Hover animation */
+.achievement-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0px 6px 18px rgba(21, 101, 192, 0.25);
+}
+
+/* Text inside cards */
+.achievement-card h3 {
+  font-size: 0.75rem; /* smaller */
+  font-weight: 700;
+  margin-bottom: 3px;
+  color: #0f2b54;
+  line-height: 1.1; /* prevents text clipping */
+}
+
+.achievement-card p {
+  font-size: 0.65rem;
+  opacity: 0.75;
+  color: #0d2a52;
+}
+
+/* Icons */
+.achievement-card i {
+  font-size: 14px;
+  color: #1565C0;
+  margin-bottom: 3px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  0% { transform: translateY(15px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* EXTRA small laptops fix */
+@media (max-height: 700px) {
+  .ach {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+  .achievements {
+    padding-top: 50px; /* extra top space */
+  }
+  .achievement-card {
+    padding: 6px 5px;
+    min-height: 55px;
+  }
+  .achievements-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 5px;
+  }
+}
