@@ -17,7 +17,6 @@ html, body {
   }
 }
 
-
 * {
   box-sizing: border-box;
 }
@@ -280,17 +279,6 @@ html, body {
   }
 }
 
-/* PROJECT SECTION */
-.project {
-  min-height: 100vh;
-  padding-top: 120px;
-  padding-bottom: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #333;
-  background-color: #f2f2f2;
-}
 
 /* ANIMATION */
 @keyframes fadeInUp {
@@ -306,98 +294,407 @@ html, body {
 /* ===== ACHIEVEMENTS SECTION ===== */
 .achievements {
   width: 100%;
-  min-height: 100vh;
-  padding: 40px 15px 15px; /* increased top padding */
+  min-height: 100vh;                  /* Full height, but can grow if needed */
+  padding: 20px 10px;                 /* Safe spacing for all screens */
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start;            /* Start from top to avoid cutoff */
   background: linear-gradient(135deg, #e8f0ff, #ffffff);
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
+/* Inner container stays centered and flexible */
 .achievements-container {
   width: 100%;
   max-width: 1300px;
+  padding: 10px;
+  box-sizing: border-box;
   text-align: center;
 }
 
-/* Main Title — ensured not cut off */
+/* Main Title */
 .ach {
-  font-size: 1.9rem;
+  font-size: clamp(1.4rem, 2vw, 2rem);
   margin-bottom: 12px;
   font-weight: 700;
   color: #1565C0;
-  line-height: 1.2; /* prevents clipping */
-  padding-top: 10px; /* ensures spacing */
-  animation: fadeUp 0.8s ease forwards;
+  line-height: 1.2;
 }
 
-/* Divider Titles */
+/* Section Titles */
 .ach-divider {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
   font-weight: 800;
-  margin-top: 18px;
-  margin-bottom: 10px;
+  margin: 15px 0 8px;
   text-align: left;
   padding-left: 10px;
-  border-left: 5px solid #1565C0;
+  border-left: 4px solid #1565C0;
   color: #0d3c75;
-  animation: fadeUp 0.8s ease forwards;
 }
 
-/* VERY Compact Grid */
+/* Fully Responsive Grid */
 .achievements-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* smaller columns */
-  gap: 6px; /* smaller spacing */
-  margin-bottom: 12px;
-  animation: fadeUp 1s ease forwards;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
-/* Cards — even smaller */
+/* Cards */
 .achievement-card {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(5px);
-  padding: 8px 6px; /* smaller */
-  border-radius: 10px;
-  box-shadow: 0px 3px 8px rgba(0,0,0,0.05);
+  padding: 12px 8px;
+  border-radius: 12px;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.08);
   transition: 0.25s ease;
-  min-height: 60px; /* smaller */
-  animation: fadeUp 1s ease forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80px;              /* Tall enough on all screens */
 }
 
-/* Hover animation */
 .achievement-card:hover {
   transform: scale(1.04);
-  box-shadow: 0px 6px 18px rgba(21, 101, 192, 0.25);
+  box-shadow: 0px 6px 20px rgba(21, 101, 192, 0.25);
 }
 
-/* Text inside cards */
+.achievement-card i {
+  font-size: clamp(14px, 2vw, 18px);
+  color: #1565C0;
+  margin-bottom: 5px;
+}
+
 .achievement-card h3 {
-  font-size: 0.75rem; /* smaller */
+  font-size: clamp(0.8rem, 1.4vw, 1rem);
   font-weight: 700;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
   color: #0f2b54;
-  line-height: 1.1; /* prevents text clipping */
 }
 
 .achievement-card p {
-  font-size: 0.65rem;
-  opacity: 0.75;
+  font-size: 0.7rem;
+  opacity: 0.8;
   color: #0d2a52;
 }
 
-/* Icons */
-.achievement-card i {
-  font-size: 14px;
-  color: #1565C0;
-  margin-bottom: 3px;
+/* Optional smoother animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+
+
+
+/* ===== Family ===== */
+.family-container {
+  width: 100%;
+  height: 100vh;     /* <-- FIXED HEIGHT */
+  padding: 40px 15px 15px;
+  background-color: white;
+  text-align: center;
+  overflow: hidden;   /* keeps content inside */
+}
+
+
+/* Title */
+.fam {
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #1565C0;
+  line-height: 1.2;
+}
+
+/* Centered Horizontal Row */
+.family-grid {
+  display: flex;
+  justify-content: center; /* centers the row */
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap; /* stays in one straight row */
+  overflow-x: auto; /* scroll only if super small screen */
+  padding: 10px 0;
+
+  scrollbar-width: none; /* hide scrollbar in Firefox */
+}
+.family-grid::-webkit-scrollbar {
+  display: none; /* hide scrollbar in Chrome/Safari */
+}
+
+/* Cards */
+.family-card {
+  height: 500px;
+  width: 450px;
+  background: #f8f8f8;
+  box-shadow: 0 4px 8px rgba(57, 147, 231, 0.637);
+  transition: 0.3s ease;
+  flex: 0 0 auto; /* prevents shrinking */
+  text-align: center;
+}
+
+.family-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Image */
+.family-card img {
+  width: clamp(110px, 18vw, 150px);
+  height: clamp(110px, 18vw, 150px);
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+/* Name */
+.family-card h2 {
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  margin-bottom: 4px;
+  color: #333;
+}
+
+/* Description */
+.family-card p {
+  font-size: clamp(0.75rem, 1.3vw, 0.95rem);
+  color: #555;
+}
+
+
+
+.nav-buttons {
+  position: fixed;
+  bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* move both buttons to the right */
+  gap: 20px; /* space between prev & next */
+  padding: 0 40px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.nav-btn {
+  padding: 12px 28px;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  transition: 0.2s ease;
+  color: white;
+  pointer-events: all;
+}
+
+.nav-btn.prev {
+  background: #00d1f6;
+}
+
+.nav-btn.next {
+  background: #1e54a6;
+}
+
+.nav-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* ----------------------- */
+/*   BATCHMATES SECTION    */
+/* ----------------------- */
+
+.batchmates {
+  width: 100%;
+  min-height: 100vh;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+}
+
+/* TOP WRAPPER */
+.batchmates-top {
+  width: 100%;
+  max-width: 1800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 10px 20px;
+
+  /* REMOVE height restrictions */
+  flex-wrap: nowrap;
+}
+
+/* SIDE NAME LISTS */
+.side-names {
+  width: 25%;
+}
+
+.side-names ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-names li {
+  background: #e8f8ff;
+  padding: 10px;
+  margin: 6px 0;
+  text-align: center;
+  font-weight: 500;
+  border-radius: 12px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Highlight your name */
+.side-names li.me {
+  border: 3px solid #007bff;
+  background: #d9ecff;
+}
+
+/* CENTER IMAGE + NAME GRID */
+.batchmates-image {
+  width: 50%;
+  text-align: center;
+}
+
+/* image auto-resizes */
+.batchmates-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 140, 255, 0.3);
+}
+
+.batchmates-caption {
+  margin-top: 12px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #008cdd;
+}
+
+
+/* CENTER NAME BOXES BELOW IMAGE */
+.picture-names {
+  margin-top: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* more columns so everything fits */
+  gap: 8px; /* tighter spacing */
+}
+
+.picture-names .name-box {
+  background: #e8f8ff;
+  padding: 6px 8px;     /* smaller padding */
+  border-radius: 10px;
+  text-align: center;
+  font-size: 12px;      /* smaller text */
+  font-weight: 500;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 1100px) {
+  .batchmates-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .side-names {
+    width: 80%;
+  }
+
+  .batchmates-image {
+    width: 90%;
+  }
+
+  .picture-names {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .picture-names {
+    grid-template-columns: 1fr;
+  }
+
+  .side-names {
+    width: 100%;
+  }
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .batchmates-top {
+    flex-direction: column;
+    align-items: center;
+    max-height: 60%;
+  }
+
+  .side-names,
+  .batchmates-image {
+    width: 90%;
+    max-height: 50%;
+  }
+
+  .batchmates-bottom-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .batchmates-bottom-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .batchmates-top {
+    flex-direction: column;
+    align-items: center;
+  }
+  .side-names,
+  .batchmates-image {
+    width: 90%;
+  }
+}
+
+
+/* Responsive Layout */
+@media screen and (max-width: 1000px) {
+  .batchmates-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .batchmates-grid {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .batchmates-grid {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+
 
 /* ===== ANIMATIONS ===== */
 @keyframes fadeUp {
   0% { transform: translateY(15px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
+}
+
+.right {
+
 }
 
 /* EXTRA small laptops fix */
@@ -418,3 +715,4 @@ html, body {
     gap: 5px;
   }
 }
+

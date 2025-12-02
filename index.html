@@ -29,6 +29,9 @@
         <li class="navbaritem"><a href="#about" class="navbarlinks active">About Me</a></li>
         <li class="navbaritem"><a href="#school" class="navbarlinks">Educational Attainment</a></li>
         <li class="navbaritem"><a href="#achievements" class="navbarlinks">Achievements</a></li>
+        <li class="navbaritem"><a href="#family" class="navbarlinks">My Family</a></li>
+        <li class="navbaritem"><a href="#batchmates" class="navbarlinks">My Batchmates</a></li>
+      </ul>
       </ul>
     </div>
   </nav>
@@ -256,8 +259,130 @@
   </div>
 </section>
 
+<!-- FAMILY -->
+<section id="family" class="family reveal">
+  <div class="family-container">
+    <h1 class="fam">
+      <i class="fa-solid fa-people-roof"></i>
+      Family
+    </h1>
+
+    <div class="family-grid">
+
+      <div class="family-card">
+        <img src="mother.jpg" alt="Mother">
+        <h2>Mother</h2>
+        <p>Nene Lyn Gapasin <b>
+          <p>She is 41 years old and her profession is Teacher at Tayug National High School.</p>
+        </b></p>
+      </div>
+
+      <div class="family-card">
+        <img src="father.jpg" alt="Father">
+        <h2>Father</h2>
+        <p>Joel Gapasin <b>
+          <p>He is 41 years old and his profession is Seaman at Sea Guardian Maritime Corp.</p>
+        </b></p>
+      </div>
+
+      <div class="family-card">
+        <img src="sibling.jpg" alt="Brother">
+        <h2>Brother</h2>
+        <p>Kyle Cedrick Gapasin <b>
+          <p>He is 17 years old and currently studying at Saint Louis University Senior High School.</p>
+        </b></p>
+      </div>
+
+    </div>
   </div>
 </section>
+
+<!-- BATCHMATES PICTURE AND NAMES -->
+<section id="batchmates" class="batchmates">
+
+  <div class="batchmates-top">
+
+    <!-- LEFT NAMES -->
+    <div class="side-names left-names">
+      <div class="side-title">Batchmates</div>
+      <ul>
+        <li>ABDULKADER, FAISAL</li>
+        <li>ABEN, ZEIUS</li>
+        <li>ABUAN, CRIS</li>
+        <li>AGALED, EDEZIE</li>
+        <li>ALAY-AY, PAUL</li>
+        <li>ALCUIZAR, JUSTIN</li>
+        <li>ANAYDOS, CHEZEN</li>
+        <li>ANTONIO, BLAS</li>
+        <li>ANTONIO, HART</li>
+        <li>ASPILAN, JOCHRISSE</li>
+        <li>BAYAWA, SARRICK</li>
+        <li>BUGNOSEN, JEMIMAH</li>
+        <li>CALIMQUIM, MARIANNE</li>
+        <li>DONATO, TOM</li>
+      </ul>
+    </div>
+
+    <!-- CENTER PICTURE + NAMES UNDER IT -->
+    <div class="batchmates-image">
+      <img src="batchmate.jpg">
+      <div class="batchmates-caption">CITCS 1C Batch</div>
+
+      <!-- CENTER NAMES IN BOXES -->
+      <div class="picture-names">
+        <div class="name-box">MAHILUM, DHELLMAR</div>
+        <div class="name-box">MENDOZA, JUSTINE</div>
+        <div class="name-box">NAPENAS, LEA</div>
+        <div class="name-box">OBONGEN, GIAN</div>
+        <div class="name-box">PAGNAS, XHIRO</div>
+        <div class="name-box">PATIAG, JARED</div>
+        <div class="name-box">POCLING, TRICIA</div>
+        <div class="name-box">RAMOS, PRINCESS</div>
+        <div class="name-box">RODRIGUEZ, HARVEY</div>
+        <div class="name-box">RODRIGUEZ, SEAN</div>
+        <div class="name-box">SANTOS, KENT</div>
+        <div class="name-box">SEVILLA, RONNEL</div>
+        <div class="name-box">SILIN, CLARK</div>
+        <div class="name-box">UGADDAN, SHAQUIL</div>
+        <div class="name-box">VICENTE, EDISON</div>
+      </div>
+    </div>
+
+    <!-- RIGHT NAMES -->
+    <div class="side-names right-names">
+      <div class="side-title">Batchmates</div>
+      <ul>
+        <li>DURANTE, JACOB</li>
+        <li>FAJARDO, KATHRYN</li>
+        <li>FAJARDO, KATHRYZ</li>
+        <li>FLORES, MARY</li>
+        <li>GONZALES, MHARVINNE</li>
+        <li>GUALDO, ROJAN</li>
+        <li>GUERRERO, DEWEY</li>
+        <li>KERYAO, GRACE</li>
+        <li>LORILLA, RONALD</li>
+        <li>LOZANO, KYRO</li>
+        <li class="me">GAPASIN, KEN CADE</li>
+      </ul>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+<!-- PREV & NEXT BUTTONS -->
+<div class="nav-buttons">
+  <button id="prevSection" class="nav-btn prev">
+    <span>&laquo;</span> PREV
+  </button>
+
+  <button id="nextSection" class="nav-btn next">
+    NEXT <span>&raquo;</span>
+  </button>
+</div>
 
 
   <!-- Typed.js -->
@@ -271,15 +396,73 @@
     });
   </script>
 
-  <!-- Click-based navbar highlighting -->
-  <script>
-    const navLinks = document.querySelectorAll(".navbarlinks");
-    navLinks.forEach(link => {
-      link.addEventListener("click", (e) => {
-        navLinks.forEach(l => l.classList.remove("active"));
-        e.currentTarget.classList.add("active");
-      });
+<script>
+  const navLinks = document.querySelectorAll(".navbarlinks");
+  const sections = document.querySelectorAll("section");
+  let currentIndex = 0;
+
+  const prevBtn = document.getElementById("prevSection");
+  const nextBtn = document.getElementById("nextSection");
+
+  // Highlight navbar link
+  function highlightNav(index) {
+    navLinks.forEach(link => link.classList.remove("active"));
+    navLinks[index].classList.add("active");
+  }
+
+  // Show/Hide Prev & Next buttons
+  function updateButtons() {
+    prevBtn.style.display = currentIndex === 0 ? "none" : "block";
+    nextBtn.style.display = currentIndex === sections.length - 1 ? "none" : "block";
+  }
+
+  // Scroll
+  function scrollToSection(index) {
+    sections[index].scrollIntoView({ behavior: "smooth" });
+    highlightNav(index);
+    updateButtons();
+  }
+
+  // Navbar clicks
+  navLinks.forEach((link, idx) => {
+    link.addEventListener("click", () => {
+      currentIndex = idx;
+      highlightNav(currentIndex);
+      updateButtons();
     });
-  </script>
+  });
+
+  // Prev button
+  prevBtn.addEventListener("click", () => {
+    currentIndex--;
+    scrollToSection(currentIndex);
+  });
+
+  // Next button
+  nextBtn.addEventListener("click", () => {
+    currentIndex++;
+    scrollToSection(currentIndex);
+  });
+
+  // Update on scroll
+  window.addEventListener("scroll", () => {
+    sections.forEach((section, i) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+        currentIndex = i;
+        highlightNav(i);
+        updateButtons();
+      }
+    });
+  });
+
+  // Initial button visibility
+  updateButtons();
+</script>
+
+
+
+
 </body>
 </html>
+
